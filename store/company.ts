@@ -1,9 +1,37 @@
 import { Mutation, VuexModule, Module } from "vuex-module-decorators"
-import { Company } from "~/types/types"
+import { Company, List } from "~/types/types"
 
 @Module({ namespaced: true, stateFactory: true })
 export default class Companies extends VuexModule {
-  private companies: Company[] = []
+  private companies: Company[] = [
+    {
+      companyId: 1,
+      name: "会社1",
+      industry: "IT",
+      feature: "A",
+      president: "山田太郎",
+      memo: "",
+      state: "client",
+    },
+    {
+      companyId: 2,
+      name: "会社2",
+      industry: "IT",
+      feature: "A",
+      president: "山田太郎",
+      memo: "",
+      state: "approach",
+    },
+    {
+      companyId: 3,
+      name: "会社3",
+      industry: "IT",
+      feature: "A",
+      president: "山田太郎",
+      memo: "",
+      state: "candidate",
+    },
+  ]
 
   @Mutation
   setCompanies(companies: Company[]) {
