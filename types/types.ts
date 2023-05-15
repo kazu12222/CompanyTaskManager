@@ -1,9 +1,10 @@
 export interface Company {
   companyId: number // Primary Key
+  name: string
   industry: string
   feature: string
   president: string
-  memo: string
+  memo: string | null
   state: "client" | "approach" | "candidate"
 }
 
@@ -29,4 +30,9 @@ export interface ClientFinancial {
   clientId: number // Foreign Key linked to Client
   earn: number
   cost: number
+}
+export interface List {
+  name: string
+  cards: Company[]
+  status: string
 }
