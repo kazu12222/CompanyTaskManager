@@ -34,5 +34,5 @@ export interface ClientFinancial {
 export interface List {
   name: string
   cards: Company[]
-  status: string
+  status: "client" | "approach" | "candidate"
 }

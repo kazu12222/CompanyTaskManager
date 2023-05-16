@@ -41,6 +41,7 @@ export default class Companies extends VuexModule {
   @Mutation
   addCompany(company: Company) {
     this.companies.push(company)
+    console.log(this.companies)
   }
   get getCompanies(): Company[] {
     return this.companies

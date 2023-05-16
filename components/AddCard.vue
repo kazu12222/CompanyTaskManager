@@ -8,19 +8,19 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from "nuxt-property-decorator"
+import { Component, Vue } from "nuxt-property-decorator"
 
 @Component
 export default class AddCard extends Vue {
   addEmptyCard() {
     this.$store.commit("company/addCompany", {
       companyId: 0,
-      name: "",
-      industry: "",
-      feature: "",
-      president: "",
-      memo: "",
-      state: "",
+      name: "会社名",
+      industry: "A",
+      feature: "A",
+      president: "A",
+      memo: "A",
+      state: "candidate",
     })
   }
 }

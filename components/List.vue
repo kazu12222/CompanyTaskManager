@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>{{ list.name }}</h2>
-    <draggable v-model="list.cards" group="cards">
+    <draggable v-model="list.cards" group="cards" @end="changeStore">
       <div
         v-for="(card, index) in list.cards"
         :key="index"
@@ -72,11 +72,18 @@ import { Company, List } from "~/types/types"
 })
 export default class ListView extends Vue {
   @Prop() list!: List
-  private selectedItem: Company = {} as Company
+  private selectedCard: Company = {} as Company
   private showModal: boolean = false
   showDetailsModal(card: Company) {
-    this.selectedItem = card
+    this.selectedCard = card
     this.showModal = true
+  }
+  changeStore(event: any) {
+    console.log(event)
+    console.log(this.list)
+    this.selectedCard = this.list.cards[event.oldIndex]
+    // this.selectedCard.state = this.list.status
+    console.log(this.selectedCard)
   }
 }
 </script>
